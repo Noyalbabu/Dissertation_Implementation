@@ -6,7 +6,7 @@ import About from './elements/about';
 import NavPage from './elements/navPage';
 function App() {
   return (
-    <div>
+    <div className='App'>
         <NavPage/>
     </div>
   );

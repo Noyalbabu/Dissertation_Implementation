@@ -1,15 +1,12 @@
 body{
   background-color: #582630;
 }
-.App {
-  text-align: center;
-  width: 215vh;
-  margin-top: 4vh;
-  background-color: #e7e7f04c;
-  color: white;
-  font-size: 1.5em;
-  
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,7 +31,11 @@ body{
 
 .heading{
   font-size: large;
+ align-items: center;
   text-align: center;
-  margin-top: 2vh;
   color:antiquewhite;
+}
+
+.button{
+  display: flex;
 }
