@@ -6,9 +6,8 @@ const ButtonStyle = (props) =>{
         <>
         <div className="wrap">
             <div className="box">
-               {props.title}
-               {props.image}
-               <image src = {props.image}/>
+               <img src={props.image} alt ="Error to load"/>
+               <h2>{props.title}</h2>
             </div>
         </div>
         </>

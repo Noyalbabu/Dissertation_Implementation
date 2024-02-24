@@ -30,10 +30,10 @@ body{
 }
 
 .heading{
-  font-size: large;
- align-items: center;
+  align-items: center;
   text-align: center;
   color:antiquewhite;
+  font-family: 'Dancing Script';
 }
 
 .button{

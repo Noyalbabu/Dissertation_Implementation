@@ -14,20 +14,34 @@
     letter-spacing: 2px;
     transition : 1s box-shadow;
     cursor :pointer; 
+    flex-direction: column;
+    overflow: hidden; /* Ensures the image stays within the box */
 }
 
 .box:hover{
-    box-shadow: 0 5px 35px 0px #e7e7f04c;
+    box-shadow: 5px 0px 35px 0px #c53b094c;
 }
 
+.box img {
+    width: 50vh;
+    height:50vh;
+    opacity: 0.9; /* Adjust the transparency level */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.box h2 {
+    color: black;
+    font-family: 'Dancing Script';
+}
 .box:hover::before, .box:hover::after{
    display: block;
    content : '';
    position: absolute;
    width : 50vh;
    height : 50vh;
-   background-color: #e7e7f04c;
-   box-shadow: 1px 1px 10px #ffee00;
+   box-shadow: 10px 10px 10px #00ff77;
    border-radius: 75px;
    z-index: -1;
    animation: 2s clockwise infinite;
@@ -35,7 +49,7 @@
 
 .box:hover::after{
     background-color: #e7e7f04c;
-    box-shadow: 1px 1px 10px #fb5902;
+    box-shadow: 10px 10px 10px #00ff77;
     animation: 2s anticlockwise infinite;   
 }
 
@@ -117,6 +131,7 @@
         left :0;
     }
 }
+
 
 
 
