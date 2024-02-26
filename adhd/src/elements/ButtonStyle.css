@@ -19,7 +19,7 @@
 }
 
 .box:hover{
-    box-shadow: 5px 0px 35px 0px #c53b094c;
+    box-shadow: 0 5px 35px 0px #c53b094c;
 }
 
 .box img {
@@ -41,6 +41,7 @@
    position: absolute;
    width : 50vh;
    height : 50vh;
+   background-color: #e7e7f04c;
    box-shadow: 10px 10px 10px #00ff77;
    border-radius: 75px;
    z-index: -1;
