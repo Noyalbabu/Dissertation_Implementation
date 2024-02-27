@@ -24,8 +24,9 @@ function Game() {
       rotation = "0 0 0"
       >
       </a-sky>
-      <a-entity id="camera" camera look-controls wasd-controls position="-1 0.6 -2"></a-entity>
-      <a-entity id ="lake" position ="-1 -1 -10" scale = "20 -20 -20"></a-entity>
+      
+      {/* <a-entity id ="lake"  position="0 0 0" scale="0.0099 0.0099 0.0099" animation="property: rotation; to: 0 360 0; dur: 14000; easing: linear; loop: true"></a-entity> */}
+      <a-entity id ="lake"  position="0 1 0" scale="0.0099 0.0099 0.0099" ></a-entity>
     </a-scene>
   );
 }
