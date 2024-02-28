@@ -1,6 +1,6 @@
 import 'aframe';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
-import bird from '../assets/scene.gltf';
+import bird from '../assets/lil_bird_man.glb';
 import Prototypes from 'prop-types';
 
 
@@ -15,7 +15,7 @@ function Bird({x, y, z}) {
         <a-scene>
             <a-assets><a-asset-item id="bird" src={bird}></a-asset-item>
         </a-assets>
-        <a-entity id="#bird" position={`${x} ${y} ${z}`} > </a-entity>
+        <a-entity id="bird" position={`${x} ${y} ${z}`} > </a-entity>
         </a-scene>
     );
 }
