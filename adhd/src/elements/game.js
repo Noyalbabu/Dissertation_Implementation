@@ -6,12 +6,13 @@ import lake from '../assets/lake.glb';
 import Bird from './bird.js';
 
 function Game() {
-    const loader = new GLTFLoader();
+  const loader = new GLTFLoader();
 
-    loader.load(lake, (d) => {
-      const entity = document.getElementById("lake");
-      entity.object3D.add(d.scene);
-    });
+  loader.load(lake, (d) => {
+    const entity = document.getElementById("lake");
+    entity.object3D.add(d.scene);
+  });
+
   return (
     <a-scene>
       <a-assets>
@@ -22,7 +23,7 @@ function Game() {
       
       {/* <a-entity id ="lake"  position="0 0 0" scale="0.0099 0.0099 0.0099" animation="property: rotation; to: 0 360 0; dur: 14000; easing: linear; loop: true"></a-entity> */}
       <a-entity id ="lake"  position="0 1 0" scale="0.0099 0.0099 0.0099" ></a-entity>
-      <Bird x={0} y={1} z={-5} />
+      <Bird x={0} y={2} z={-1} />
      
     </a-scene>
   );

@@ -5,6 +5,7 @@ import Prototypes from 'prop-types';
 
 
 function Bird({x, y, z}) {
+    
     const loader = new GLTFLoader();
     loader.load(bird, (d) =>{
       const entity = document.getElementById("bird");
@@ -12,11 +13,7 @@ function Bird({x, y, z}) {
     }) 
 
     return (
-        <a-scene>
-            <a-assets><a-asset-item id="bird" src={bird}></a-asset-item>
-        </a-assets>
-        <a-entity id="bird" position={`${x} ${y} ${z}`} > </a-entity>
-        </a-scene>
+        <a-entity id="bird" position={`${x} ${y} ${z}`}  scale = "0.09 0.09 0.09"> </a-entity>
     );
 }
 
