@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import 'aframe';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 import sky from '../Images/sky.jpg';
@@ -6,12 +6,15 @@ import lake from '../assets/lake.glb';
 import Bird from './bird.js';
 
 function Game() {
-  const loader = new GLTFLoader();
+  useEffect(() => {
+    const loader = new GLTFLoader();
 
-  loader.load(lake, (d) => {
-    const entity = document.getElementById("lake");
-    entity.object3D.add(d.scene);
-  });
+    loader.load(lake, (gltf) => {
+      const entity = document.getElementById("lake");
+      entity.object3D.add(gltf.scene);
+    });
+  }, []);
+
 
   return (
     <a-scene>

@@ -1,6 +1,8 @@
 import 'aframe';
+import 'aframe-extras';
+// index.js
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
-import bird from '../assets/lil_bird_man.glb';
+import bird from '../assets/bird_3d.glb';
 import Prototypes from 'prop-types';
 
 
@@ -13,7 +15,13 @@ function Bird({x, y, z}) {
     }) 
 
     return (
-        <a-entity id="bird" position={`${x} ${y} ${z}`}  scale = "0.09 0.09 0.09"> </a-entity>
+        <a-scene>
+            <a-assets>
+                <a-asset-item id="bird" response-type = "arraybuffer" src={bird}></a-asset-item>
+            </a-assets>
+            <a-entity gltf-model="#bird" position={`${x} ${y} ${z}`}  scale="0.0099 0.0099 0.0099"> </a-entity>
+        </a-scene>
+        
     );
 }
 
