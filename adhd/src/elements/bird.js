@@ -1,27 +1,26 @@
+import React, {useEffect} from 'react';
 import 'aframe';
 import 'aframe-extras';
-// index.js
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
-import bird from '../assets/bird_3d.glb';
+import bird from '../assets/love_birds_parrot.glb';
 import Prototypes from 'prop-types';
 
-
 function Bird({x, y, z}) {
+    const AFRAME = window.AFRAME;
+    useEffect(() => {
+        const loader = new GLTFLoader();
+        const entity = document.getElementById('bird-entity');
     
-    const loader = new GLTFLoader();
-    loader.load(bird, (d) =>{
-      const entity = document.getElementById("bird");
-      entity.object3D.add(d.scene);
-    }) 
+        loader.load(bird, (gltf) => {
+          if (entity) {
+            entity.object3D.add(gltf.scene);
+            debugger;
+          }
+        });
+      }, []);
 
     return (
-        <a-scene>
-            <a-assets>
-                <a-asset-item id="bird" response-type = "arraybuffer" src={bird}></a-asset-item>
-            </a-assets>
-            <a-entity gltf-model="#bird" position={`${x} ${y} ${z}`}  scale="0.0099 0.0099 0.0099"> </a-entity>
-        </a-scene>
-        
+            <a-entity id="bird-entity" anime position={`${x} ${y} ${z}` }> </a-entity>  
     );
 }
 
