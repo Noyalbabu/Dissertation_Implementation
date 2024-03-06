@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import '../App.css';
 import ButtonStyle from "./ButtonStyle";
-import Game from "./game";
+//import Game from "./game";
 import About from "./about";
+import Test from "./test";
 
 
 function NavPage() {
@@ -32,7 +33,7 @@ function NavPage() {
                    </div>
                     </div>
                 </div>  ): null}
-                {showGame && <Game />}
+                {showGame && <Test />}
                 {showAbout && <About />}
             </div>  
         

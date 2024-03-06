@@ -19,7 +19,7 @@ function Bird({x, y, z}) {
         });
       }, []);
     return (
-            <a-entity id="bird-entity" position={`${x} ${y} ${z}`} animation> </a-entity>  
+            <a-entity id="bird-entity" position={`${x} ${y} ${z}`} > </a-entity>  
     );
 }
 
