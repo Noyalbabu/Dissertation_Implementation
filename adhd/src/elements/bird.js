@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import 'aframe';
-import 'aframe-extras';
+import 'aframe-extras.animation-mixer'
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 import bird from '../assets/love_birds_parrot.glb';
 import Prototypes from 'prop-types';
-
 function Bird({x, y, z}) {
 
     useEffect(() => {
@@ -13,13 +12,31 @@ function Bird({x, y, z}) {
     
         loader.load(bird, (gltf) => {
         if (entity) {
-            debugger;
             entity.object3D.add(gltf.scene);
         }
         });
+               // Script to animate the bird entity
+        const animateBird = () => {
+            const birdEntity = document.getElementById('bird-entity');
+            if (birdEntity) {
+                birdEntity.setAttribute('animation', {
+                    property: 'position',
+                    to: `${x -0.5} ${y} ${z + 3}`, 
+                    dur: 5500, // Duration of animation (in milliseconds)
+                    easing: 'linear', // Easing function
+                    loop: true, // Loop the animation
+                });
+            }
+        };
+
+        // Call the animation function
+        animateBird();  
+
       }, []);
     return (
-            <a-entity id="bird-entity" position={`${x} ${y} ${z}`} > </a-entity>  
+        console.log('bird'),
+        <a-entity type="model" id="bird-entity" position={`${x} ${y} ${z}`} scale="1 1 1" animation-mixer="clip:'*'"></a-entity>  
+
     );
 }
 

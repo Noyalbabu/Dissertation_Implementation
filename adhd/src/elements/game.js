@@ -26,7 +26,7 @@ function Game() {
       
       {/* <a-entity id ="lake"  position="0 0 0" scale="0.0099 0.0099 0.0099" animation="property: rotation; to: 0 360 0; dur: 14000; easing: linear; loop: true"></a-entity> */}
       <a-entity id ="lake-entity"  position="0 1 0" scale="0.0099 0.0099 0.0099" ></a-entity>
-      <Bird x={0} y={2} z={-1} />
+      <Bird x={0} y={1.3} z={-1} />
     </a-scene>
   );
 }
