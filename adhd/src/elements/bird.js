@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import 'aframe';
 import 'aframe-extras.animation-mixer'
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
-import bird from '../assets/love_birds_parrot.glb';
+import bird from '../assets/cute_little_duck.glb';
 import Prototypes from 'prop-types';
 function Bird({x, y, z}) {
 
