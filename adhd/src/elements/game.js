@@ -7,7 +7,9 @@ import Bird from './bird.js';
 
 
 function Game() {
-  const bulletsRef = useRef([]);
+  //Array to store bullets and balloons. To keep track of the objects generated. 
+  const bulletsList = useRef([]);
+  const balloonsList = useRef([]);
   const sceneRef = useRef(null);
 
   useEffect(() => {
@@ -20,13 +22,16 @@ function Game() {
       }
     });
 
+    generateBalloons();
+
     //Func for launching bullets from spacebar
     const handleSpacebarShoot = (event) => {
       if (event.code === 'Space') {
-        shootBullet();
+        fireBullet();
       }
     };
-  
+
+
     window.addEventListener('keydown', handleSpacebarShoot);
   
     return () => {
@@ -34,27 +39,40 @@ function Game() {
     };
   }, []);
 
-  //Function to generate balloons
-  const generateBalloons = () => {
-    const balloon = document.createElement('a-sphere');
-    balloon.setAttribute('radius', '0.1');
-    balloon.setAttribute('color', 'red');
-    balloon.setAttribute('position', `${Math.random() * 10 - 5} 2 ${-Math.random() * 10}`);
-    sceneRef.current.appendChild(balloon);
-    generateBalloons();
+  const bulletCollision = () => {
+    debugger;
+    console.log('Hit something...');
   };
 
+  const generateBalloons = () => {
+    const balloon = document.createElement('a-sphere');
+    balloon.setAttribute('radius', '0.5');
+    balloon.setAttribute('color', 'red');
+    balloon.setAttribute('position', `${Math.random() * 10 - 5} 2 ${-Math.random() * 10}`);
+    balloon.setAttribute('dynamic-body', true);
+    balloon.addEventListener('collide', bulletCollision)
+    console.log('Balloon generated:', balloon);
+    sceneRef.current.appendChild(balloon);
+    balloonsList.current.push(balloon);
+  };
+
+
   //Function to shoot bullet 
-  const shootBullet = () => {
+  const fireBullet = () => {
     const camera = document.getElementById('game1Cam');
     if (!camera) return;
+    
 
     const bullet = document.createElement('a-sphere');
     bullet.setAttribute('radius', '0.05');
     bullet.setAttribute('color', 'black');
     bullet.setAttribute('position', camera.getAttribute('position'));
+    bullet.setAttribute('dynamic-body', true);
+    console.log('Bullet created:', bullet); // Debugging statement
+    bullet.addEventListener('collide', bulletCollision);
+
     sceneRef.current.appendChild(bullet);
-    bulletsRef.current.push(bullet);
+    bulletsList.current.push(bullet);
 
     const direction = new Vector3(0, 0, -1);
     direction.applyQuaternion(camera.object3D.quaternion);
@@ -64,7 +82,7 @@ function Game() {
       bullet.object3D.position.add(velocity);
       if (bullet.object3D.position.z < -10) {
         sceneRef.current.removeChild(bullet);
-        bulletsRef.current.splice(bulletsRef.current.indexOf(bullet), 1);
+        bulletsList.current.splice(bulletsList.current.indexOf(bullet), 1);
       } else {
         requestAnimationFrame(animateBullet);
       }
