@@ -7,13 +7,13 @@ import Bird from './bird.js';
 import AFRAME from 'aframe';
 
 
-/*  if (!AFRAME.components['bullet-collision-listener']) {
+if (!AFRAME.components['bullet-collision-listener']) {
   // Register the component only if it's not already registered
   AFRAME.registerComponent('bullet-collision-listener', {
     init: function () {
       console.log('Bullet collision listener initialized');
       const el = this.el;
-      console.log('el element:', el);
+      console.log('el element:', this.el);
 
       const handleCollision = function (event) {
         console.log('Collision detected');
@@ -29,23 +29,10 @@ import AFRAME from 'aframe';
       el.addEventListener('collide', handleCollision);
     }
   });
-} */ 
+}  
 function Game() {
   const bulletsList = useRef([]);
   const sceneRef = useRef(null);
-
- /*  useEffect(() => {
-    const handleCollision = (event) => {
-      console.log('Collision detected', event.detail.body.el.id);
-    }
-    ;
-    const bulletEl = document.querySelector('#bulletball');
-    bulletEl.addEventListener('collide', handleCollision);
-
-    return () => {
-      bulletEl.removeEventListener('collide', handleCollision);
-    };
-  }, []); */
 
   useEffect(() => {
     const loader = new GLTFLoader();
@@ -63,18 +50,11 @@ function Game() {
         fireBullet();
       }
     };
-    const handleCollision = (event) => {
-      console.log('Collision detected', event.detail.body.el.id);
-    }
-    ;
-    const bulletEl = document.querySelector('#bulletball');
-    bulletEl.addEventListener('collide', handleCollision);
 
     window.addEventListener('keydown', handleSpacebarShoot);
 
     return () => {
       window.removeEventListener('keydown', handleSpacebarShoot);
-      bulletEl.removeEventListener('collide', handleCollision);
     };
     
   }, []);
@@ -120,7 +100,7 @@ function Game() {
     
     animateBullet();
   };
-  
+
   return (
     <a-scene ref={sceneRef} id="game1Scene" physics = "debug: true; gravity: -9.8;">
       <a-assets>
@@ -129,7 +109,7 @@ function Game() {
       </a-assets>
       <a-sky color="#FFFFFF" material="src: #sky" rotation="0 0 0"></a-sky>
       <a-entity id="lake-entity" position="0 -0.02 0" scale="0.0099 0.0099 0.0099"></a-entity>
-      <a-camera id="game1Cam" position="0 0.5 0">
+      <a-camera id="game1Cam" position="0 0.5 0" raycaster="objects: .raycastable">
         <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
       </a-camera>
       <Bird x={0} y={0.1} z={-1} />
