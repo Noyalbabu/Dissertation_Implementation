@@ -7,7 +7,7 @@ import Bird from './bird.js';
 import AFRAME from 'aframe';
 
 
- if (!AFRAME.components['bullet-collision-listener']) {
+/*  if (!AFRAME.components['bullet-collision-listener']) {
   // Register the component only if it's not already registered
   AFRAME.registerComponent('bullet-collision-listener', {
     init: function () {
@@ -16,7 +16,6 @@ import AFRAME from 'aframe';
       console.log('el element:', el);
 
       const handleCollision = function (event) {
-        debugger;
         console.log('Collision detected');
         const collidedObject = event.detail.body.el;
         // Check if the collided object's ID starts with 'balloon-'
@@ -26,14 +25,27 @@ import AFRAME from 'aframe';
           collidedObject.parentNode.removeChild(collidedObject);
         }
       };
-       
+      
       el.addEventListener('collide', handleCollision);
     }
   });
-} 
+} */ 
 function Game() {
   const bulletsList = useRef([]);
   const sceneRef = useRef(null);
+
+ /*  useEffect(() => {
+    const handleCollision = (event) => {
+      console.log('Collision detected', event.detail.body.el.id);
+    }
+    ;
+    const bulletEl = document.querySelector('#bulletball');
+    bulletEl.addEventListener('collide', handleCollision);
+
+    return () => {
+      bulletEl.removeEventListener('collide', handleCollision);
+    };
+  }, []); */
 
   useEffect(() => {
     const loader = new GLTFLoader();
@@ -51,11 +63,18 @@ function Game() {
         fireBullet();
       }
     };
+    const handleCollision = (event) => {
+      console.log('Collision detected', event.detail.body.el.id);
+    }
+    ;
+    const bulletEl = document.querySelector('#bulletball');
+    bulletEl.addEventListener('collide', handleCollision);
 
     window.addEventListener('keydown', handleSpacebarShoot);
 
     return () => {
       window.removeEventListener('keydown', handleSpacebarShoot);
+      bulletEl.removeEventListener('collide', handleCollision);
     };
     
   }, []);
