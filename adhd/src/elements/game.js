@@ -4,32 +4,10 @@ import { Vector3 } from 'three';
 import sky from '../Images/sky.jpg';
 import lake from '../assets/lake.glb';
 import Bird from './bird.js';
-import AFRAME from 'aframe';
+import 'aframe';
 
 
-if (!AFRAME.components['bullet-collision-listener']) {
-  // Register the component only if it's not already registered
-  AFRAME.registerComponent('bullet-collision-listener', {
-    init: function () {
-      console.log('Bullet collision listener initialized');
-      const el = this.el;
-      console.log('el element:', this.el);
 
-      const handleCollision = function (event) {
-        console.log('Collision detected');
-        const collidedObject = event.detail.body.el;
-        // Check if the collided object's ID starts with 'balloon-'
-        if (collidedObject.id.startsWith('balloon-')) {
-          console.log('Bullet collided with balloon:', collidedObject.id);
-          el.parentNode.removeChild(el);
-          collidedObject.parentNode.removeChild(collidedObject);
-        }
-      };
-      
-      el.addEventListener('collide', handleCollision);
-    }
-  });
-}  
 function Game() {
   const bulletsList = useRef([]);
   const sceneRef = useRef(null);
@@ -42,7 +20,9 @@ function Game() {
       if (entity) {
         entity.object3D.add(gltf.scene);
       }
+      for (let i = 0; i < 5; i++) {
         generateBalloons();
+      }
     });
 
     const handleSpacebarShoot = (event) => {
@@ -58,7 +38,7 @@ function Game() {
     };
     
   }, []);
-
+//function to generate balloons
   const generateBalloons = () => {
     const balloon = document.createElement('a-sphere');
     balloon.setAttribute('radius', '0.5');
@@ -66,8 +46,13 @@ function Game() {
     balloon.setAttribute('id', `balloon-${sceneRef.current.children.length}`);
     balloon.setAttribute('position', `${Math.random() * 10 - 5} 1 ${-Math.random() * 10}`);
     balloon.setAttribute('static-body', true);
+    balloon.addEventListener('click', () => removeBalloon(balloon));
     console.log('balloon id is', balloon.id);
     sceneRef.current.appendChild(balloon);
+  };
+//Here, the balloon disappers when clicked
+  const removeBalloon = (balloon) => {
+    sceneRef.current.removeChild(balloon);
   };
 
   const fireBullet = () => {
@@ -79,8 +64,7 @@ function Game() {
     bullet.setAttribute('radius', '0.05');
     bullet.setAttribute('position', camera.getAttribute('position'));
     bullet.setAttribute('dynamic-body', true);
-    bullet.setAttribute('bullet-collision-listener', '');
-    console.log(bullet);
+    console.log(bullet);  
     sceneRef.current.appendChild(bullet);
     bulletsList.current.push(bullet);
 
