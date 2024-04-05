@@ -5,7 +5,6 @@ import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 import bird from '../assets/cute_little_duck.glb';
 import Prototypes from 'prop-types';
 function Bird({x, y, z}) {
-
     useEffect(() => {
         const loader = new GLTFLoader();
         const entity = document.getElementById('bird-entity');
@@ -15,7 +14,7 @@ function Bird({x, y, z}) {
             entity.object3D.add(gltf.scene);
         }
         });
-               // Script to animate the bird entity
+      // Script to animate the bird entity
         const animateBird = () => {
             const birdEntity = document.getElementById('bird-entity');
             if (birdEntity) {
@@ -34,7 +33,7 @@ function Bird({x, y, z}) {
 
       }, []);
     return (
-        console.log('bird'),
+        console.log('bird in bird.js'),
         <a-entity type="model" id="bird-entity" position={`${x} ${y} ${z}`} scale="1 1 1" animation-mixer="clip:'*'"></a-entity>  
 
     );
