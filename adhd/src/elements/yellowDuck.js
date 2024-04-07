@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
 import 'aframe';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
-import bird from '../assets/cute_little_duck.glb';
+import bird from '../assets/rubber_duck.glb';
 import Prototypes from 'prop-types';
-function Bird({x, y, z}) {
+
+function YellowBird({x, y, z}) {
     useEffect(() => {
         const loader = new GLTFLoader();
-        const entity = document.getElementById('bird-entity');
+        const entity = document.getElementById('Ybird-entity');
     
         loader.load(bird, (gltf) => {
         if (entity) {
@@ -15,7 +16,7 @@ function Bird({x, y, z}) {
         });
       // Script to animate the bird entity
         const animateBird = () => {
-            const birdEntity = document.getElementById('bird-entity');
+            const birdEntity = document.getElementById('Ybird-entity');
             if (birdEntity) {
                 birdEntity.setAttribute('animation', {
                     property: 'position',
@@ -32,14 +33,14 @@ function Bird({x, y, z}) {
 
       }, []);
     return (
-        <a-entity type="model" id="bird-entity" position={`${x} ${y} ${z}`} scale="1 1 1" animation-mixer="clip:'*'"></a-entity>  
+        <a-entity type="model" id="Ybird-entity" position={`${x} ${y} ${z}`} scale="0.3 0.3 0.3" animation-mixer="clip:'*'"></a-entity>  
     );
 }
 
-Bird.ProtoTypes= {
+YellowBird.ProtoTypes= {
     x: Prototypes.number,
     y: Prototypes.number,
     z: Prototypes.number
 }
 
-export default Bird;
+export default YellowBird;

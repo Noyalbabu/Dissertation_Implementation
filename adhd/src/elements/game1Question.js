@@ -1,11 +1,13 @@
 import React from 'react';
+import { color } from 'three/examples/jsm/nodes/Nodes.js';
 
 // Define your component using JSX syntax
-const Game1Q = () => {
+function Game1Q() {
   return (
-    <div className='Game1Q'>
-      <h1>Hello, World!</h1>
+    <div >
+      <h1 style={{color:'white'}}>Hello, World!</h1>
       <p>This is a simple React component written using JSX.</p>
+      <a href = '/' ><button>Back Home</button></a>
     </div>
   );
 };

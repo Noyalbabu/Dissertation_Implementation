@@ -17,7 +17,6 @@ function Monkey({x, y, z}) {
         });
       }, []);
     return (
-        console.log('Monkey in bird.js'),
         <a-entity type="model" id="monkey-entity" position={`${x} ${y} ${z}`} scale="0.2 0.2 0.2" rotation="0 150 0 "></a-entity>  
 
     );
