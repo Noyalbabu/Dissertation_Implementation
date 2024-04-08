@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { useLocation } from 'react-router-dom';
+import { ceilPowerOfTwo } from 'three/src/math/MathUtils.js';
 // Define your component using JSX syntax
 function Game1Q() {
   const location = useLocation();
@@ -70,8 +71,9 @@ function Game1Q() {
     }
   }
   return (
+    <>
+    <h1 style={{textAlign: 'center', color: '#BCBEC0' , fontSize:'50px'}}>TEST YOUR MARVELOUS BRAIN</h1>
     <div className='questionaire1'>
-      <h1>TEST YOUR MARVELOUS BRAIN</h1>
       <ques>Question 1
         <div id='hideQ'>
         <p>How many ballons did you pop?</p>
@@ -111,8 +113,17 @@ function Game1Q() {
         </div>
       </ques>
 
+      <div id='conclusion'>
+        <p>This game assesses how effectively your brain processes information and manages tasks within a set time frame. Initially, participants are tasked with counting popped balloons, designed to serve as distractions while evaluating cognitive abilities, attention span, and gaming stamina. Additionally, users are prompted to identify creatures within the game,
+           testing observation skills, followed by a question challenging visual acuity and attention to detail. When confronted with significant information influx, the brain may overlook specific data, particularly amidst complex challenges, directing focus solely on the task at hand, potentially hindering awareness of other environmental elements. 
+           Participation in this game showcases your capacity to concentrate on tasks and exhibit attention to detail. 
+           This underscores the significance of attention, focus, and cognitive skills, particularly in conditions like ADHD, where these abilities may be impacted.
+        </p>
+      </div>
+
       <a href = '/' ><button>Back Home</button></a>
     </div>
+  </>
   );
 };
 

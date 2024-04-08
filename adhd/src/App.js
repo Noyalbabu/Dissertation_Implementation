@@ -7,10 +7,9 @@ function App() {
   return (
     <div className='App'>
         <BrowserRouter>
-        <NavPage/>
           <Routes>
-            <Route path = '/' />
-            <Route path = '/game1Questionaire' element = {<Game1Q/>}/>
+            <Route path = '/' element={<NavPage/>} />
+            <Route path = '/game1Question' element = {<Game1Q/>}/>
           </Routes>
         </BrowserRouter>
     </div>

@@ -60,6 +60,8 @@ body{
   width: 100%;
   color: white;
   background-color: #947360;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #E9EAE0;
 }
 .questionaire1 ques{
   background-color:#970C10;
@@ -67,7 +69,7 @@ body{
     width: 80vh;
     box-shadow: 0px 2px 2px #F7EDD0;
     font-size: 14px;
-    margin: 10px 10px;
+    margin: 12px 12px;
     padding: 10px 30px;
     border-radius: 5px;
     border: none;
@@ -80,4 +82,12 @@ body{
         font-size: 3vh;
         text-align: center;
     }
+}
+.questionaire1 #conclusion{
+  background-color: transparent;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+    letter-spacing: 2px;
 }

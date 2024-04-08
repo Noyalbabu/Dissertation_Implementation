@@ -32,7 +32,7 @@ function Game() {
         setVisibleBird(false);
         document.getElementById('game1Scene').remove();
         //move to the next game, next page
-        navigate(`/game1Questionaire`, { state: { data: totalBalloonsHit } });
+        navigate(`/game1Question`, { state: { data: totalBalloonsHit } });
       }
     }, 1000);
     return () => clearInterval(timer);
