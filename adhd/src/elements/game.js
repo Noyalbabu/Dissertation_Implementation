@@ -15,8 +15,6 @@ import Game1Q from './game1Question.js';
 
 function Game() {
   const navigate = useNavigate();
-  //var totalBalloonsHit = 0;
-  //var timeDurartion = 20;
   const [totalBalloonsHit, setTotalBalloonsHit] = useState(0);
   const [timeDuration, setTimeDuration] = useState(20);
 
@@ -34,7 +32,7 @@ function Game() {
         setVisibleBird(false);
         document.getElementById('game1Scene').remove();
         //move to the next game, next page
-        navigate('/game1Question');
+        navigate(`/game1Questionaire`, { state: { data: totalBalloonsHit } });
       }
     }, 1000);
     return () => clearInterval(timer);
@@ -43,6 +41,7 @@ function Game() {
   const [play] = useSound(pop, { volume: 0.25 });     // credcit : (“Announcing ‘Use-Sound’, a React Hook for Sound Effects” 2023)
   const sceneRef = useRef(null);
   const [visibleBird, setVisibleBird] = useState(false);
+  const [visibleYellowBird, setVisibleYellowBird] = useState(true);
   const [visibleMonkey, setVisibleMonkey] = useState(true);
   useEffect(() => {
     const loader = new GLTFLoader();
@@ -60,6 +59,7 @@ function Game() {
     // Timer for bird to appear
     const timer = setTimeout(() => {
       setVisibleBird(true);
+      setVisibleYellowBird(false);
       setVisibleMonkey(false);}
       , 10000);
     return () => clearTimeout(timer);
@@ -98,7 +98,7 @@ const removeBalloon = (balloon) => {
       {/* make the bird disappear appear 30 sec */}
       {visibleBird && <Bird x={0} y={0.1} z={-1} /> }
       {visibleMonkey && <Monkey x={1} y={0.19} z={-1} />} 
-      <YellowBird x={0} y={0.1} z={-1} />
+      {visibleYellowBird && <YellowBird x={0} y={0.1} z={-1} />}
     </a-scene>
   );
 }

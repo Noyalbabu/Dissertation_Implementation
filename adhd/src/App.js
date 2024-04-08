@@ -10,7 +10,7 @@ function App() {
         <NavPage/>
           <Routes>
             <Route path = '/' />
-            <Route path = '/game1Question' element = {<Game1Q/>}/>
+            <Route path = '/game1Questionaire' element = {<Game1Q/>}/>
           </Routes>
         </BrowserRouter>
     </div>
