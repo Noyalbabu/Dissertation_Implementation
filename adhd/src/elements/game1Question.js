@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { useLocation } from 'react-router-dom';
-import { ceilPowerOfTwo } from 'three/src/math/MathUtils.js';
+import { FaHome } from "react-icons/fa";
 // Define your component using JSX syntax
 function Game1Q() {
   const location = useLocation();
@@ -121,7 +121,7 @@ function Game1Q() {
         </p>
       </div>
 
-      <a href = '/' ><button>Back Home</button></a>
+      <a href = '/' ><FaHome size={50} color='white'/></a>
     </div>
   </>
   );
