@@ -28,11 +28,19 @@ function Awareness() {
     <div className='awarenessPageElements'>
     <div className='element'>
       <h1>What is ADHD? </h1>
-      <p>As published in NHS, </p>
+      <p>As published in NHS,Attention deficit hyperactivity disorder (ADHD) is a condition that affects people's behaviour. People with ADHD can seem restless, may have trouble concentrating and may act on impulse.  </p>
     </div>
     <div className='element'>
       <h1>Signs and Symptoms </h1>
-      <p>iewhdoiwefuwp</p>
+      <p>Symptoms of ADHD tend to be noticed at an early age and may become more noticeable when a child's circumstances change, such as when they start school.
+
+Most cases are diagnosed when children are under 12 years old, but sometimes it's diagnosed later in childhood.
+
+Sometimes ADHD was not recognised when someone was a child, and they are diagnosed later as an adult.
+
+The symptoms of ADHD may improve with age, but many adults who were diagnosed with the condition at a young age continue to experience problems.
+
+People with ADHD may also have additional problems, such as sleep and anxiety disorders</p>
     </div>
     <div className='element'>
       <h1>Common Facts about ADHD</h1>

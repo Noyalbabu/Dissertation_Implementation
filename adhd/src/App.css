@@ -186,6 +186,15 @@ body{
 }
 .element:hover{
   box-shadow: 0 5px 35px 0px #E7EBC5;
+  width: auto;
+  height: auto;
+}
+.element p {
+  display: none;
+}
+
+.element:hover  p {
+  display: block;
 }
 
 .footer{
