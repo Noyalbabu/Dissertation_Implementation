@@ -28,7 +28,7 @@ function Awareness() {
     <div className='awarenessPageElements'>
     <div className='element'>
       <h1>What is ADHD? </h1>
-      <p>iewhdoiwefuwp</p>
+      <p>As published in NHS, </p>
     </div>
     <div className='element'>
       <h1>Signs and Symptoms </h1>
