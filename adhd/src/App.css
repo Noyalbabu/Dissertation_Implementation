@@ -1,8 +1,9 @@
 body{
   background-color: #582630;
+  
   font-family: 'Courier New', Courier, monospace;
 }
-.App{
+/* .App{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,17 +29,42 @@ body{
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .heading{
   align-items: center;
   text-align: center;
   color:antiquewhite;
-  font-family: 'Dancing Script';
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
+.heading h1{
+  font-size: 10vh;
+  font-weight: bolder;
+  letter-spacing: 2vh;
+  margin: 0;
+  
+}
+.heading h2{
+  font-weight: bold;
+  color: #07020D;
 
+}
+.infobar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #878E88;
+  height: 5vh;
+  font-weight: bold;
+  width: 100%;
+  color: black;
+}
 .button{
   display: flex;
+  margin: 0 ;
+
 }
 
 .gamingPage{
@@ -89,4 +115,91 @@ body{
     text-align: center;
     color: black;
     letter-spacing: 2px;
+}
+.aboutPage{
+  display: flex;
+  height: 100vh;
+  background-image: url('./Images/ourStory.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.aboutPageElements{
+  display: flex;
+  flex-direction: column;
+  color: #f9f9f9;
+  /* border: 1px solid white; */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.aboutPageElements h1{
+  font-size: 10vh;
+  font-weight: bolder; 
+}
+.aboutPageElements p{
+  font-size: 2.5vh;
+  font-weight: bold;
+  margin: 20px 0;
+  max-width: 5500px;
+  letter-spacing: 2px;
+}
+.awarenessPage{
+  display: grid;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh; /* Remove fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  width: 100%;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+
+}
+.awarenessPageElements{
+  /* border: 1px solid white; */
+  text-align: center;
+  display: flex;
+}
+.element{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: auto 0;
+  width : 50vh;
+  height : 40vh;
+  background-color: #e7e7f04c;
+  border-radius: 10px;
+  font-size: 25px;
+  letter-spacing: 2px;
+  transition : 1s box-shadow;
+  cursor :pointer; 
+  flex-direction: column;
+  overflow: hidden;
+  margin : 10px 10px;
+}
+.element:hover{
+  box-shadow: 0 5px 35px 0px #E7EBC5;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BDBBB0;
+  color: rgb(0, 0, 0);
+  height: 5vh;
+  font-size: 2vh;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
