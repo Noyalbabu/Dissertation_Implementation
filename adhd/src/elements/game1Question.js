@@ -67,8 +67,13 @@ function Game1Q() {
       document.getElementById('Q3result').style.display = 'block';
       document.getElementById('Q3result1').style.display = 'none';
       document.getElementById('Q3result2').style.display = 'block';
-    
     }
+
+    if(document.getElementById('result2').style.display == 'block' || document.getElementById('Q2result2').style.display == 'block'){
+      document.getElementById('conclusion1').style.display = 'block';}
+      else if(document.getElementById('result1').style.display == 'block' && document.getElementById('Q2result1').style.display == 'block' && document.getElementById('Q3result1').style.display == 'block'){
+        document.getElementById('conclusion2').style.display = 'block';
+      }
   }
   return (
     <>
@@ -82,7 +87,7 @@ function Game1Q() {
         <button type="submit" onClick={getAnswer1}>Submit</button></div>
         <p id='result' style={{display: 'none'}}>You popped {UserBalloonsHit} ballons!</p>
         <p id='result1' style={{display: 'none'}}>You work deeply on the given task, indicating your brain capacity to do a specified task is GOOD.</p>
-        <p id='result2' style={{display: 'none'}}>Most likely you might be distracted to certain colors or sounds in the game. Do not worry the balloons were made to distract you! </p>
+        <p id='result2' style={{display: 'none'}}>Most likely you might be distracted to certain colors or sounds in the game. Individuals with ADHD often struggle with maintaining focus, especially on repetitive tasks. </p>
         </div>
       </ques>
 
@@ -91,8 +96,8 @@ function Game1Q() {
         <p>Count the creatures, both animals and birds, that you have observed in the game.</p>
         <p id='Q2result' style={{display: 'none'}}>Three creatures were depicted in the game: a monkey and two distinct types of ducks.</p>
         <p id='Q2result1' style={{display: 'none'}}>You are exceptional! The human brain has a remarkable ability to filter out distractions when faced with a challenge. In this game the balloons were the distraction. Your ability to understand the enviornment was the challenge. Despite the task to count the balloons, you were able to remain aware of your surroundings.</p>
-        <p id='Q2result2' style={{display: 'none'}}>Given task was to count the ballons you pop. The answer indicates that you are most likely to get distracted on sounds, colors and figures. Good job on focusing your envionment.</p>
-        <p id='Q2result3' style={{display: 'none'}}>The human brain has a remarkable ability to filter out distractions when faced with a challenge. In this instance, the task was to count the balloons you popped. . Your brain may have focused solely on the balloons, making it challenging to notice other elements in the game.</p>
+        <p id='Q2result2' style={{display: 'none'}}>Given task was to count the ballons you pop. The answer indicates that you are most likely to get distracted on sounds, colors and figures. You might find hard in resisting the urge to interact with distractions.</p>
+        <p id='Q2result3' style={{display: 'none'}}>The human brain has a remarkable ability to filter out distractions when faced with a challenge. In this instance, the task was to count the balloons you popped. Your brain focused solely on the balloons, avoided the urge to notice other elements in the game. It's okay, they were meant to distract you!</p>
         <input type='radio' name='a2' id='q2a1' /> Three  <br/>
         <input type='radio' name='a2' id='q2a2' /> Two     <br/>
         <input type='radio' name='a2' id='q2a3' /> Not sure!
@@ -114,11 +119,8 @@ function Game1Q() {
       </ques>
 
       <div id='conclusion'>
-        <p>This game assesses how effectively your brain processes information and manages tasks within a set time frame. Initially, participants are tasked with counting popped balloons, designed to serve as distractions while evaluating cognitive abilities, attention span, and gaming stamina. Additionally, users are prompted to identify creatures within the game,
-           testing observation skills, followed by a question challenging visual acuity and attention to detail. When confronted with significant information influx, the brain may overlook specific data, particularly amidst complex challenges, directing focus solely on the task at hand, potentially hindering awareness of other environmental elements. 
-           Participation in this game showcases your capacity to concentrate on tasks and exhibit attention to detail. 
-           This underscores the significance of attention, focus, and cognitive skills, particularly in conditions like ADHD, where these abilities may be impacted.
-        </p>
+        <p id ='conclusion1'style={{display: 'none'}}>The result from assessment suggests that the symptoms of ADHD is present in you! It's probable that you could be drawn to specific colors or sounds within the game, which could lead to distractions. People with ADHD frequently encounter challenges in sustaining attention, particularly when faced with repetitive tasks. Resisting the temptation to engage with distractions may prove difficult for you. </p>
+        <p id='conclusion2' style={{display: 'none'}}>The result from assessment suggests that the you have great attention skills and good vision</p>
       </div>
 
       <a href = '/' ><FaHome size={50} color='white'/></a>

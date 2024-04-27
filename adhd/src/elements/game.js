@@ -29,7 +29,7 @@ function Game() {
         
         alert(`Game Over! You hit ${totalBalloonsHit} balloons`);
         //destroy the game scene
-        setVisibleBird(false);
+        setVisibleBird(false);    
         document.getElementById('game1Scene').remove();
         //move to the next game, next page
         navigate(`/game1Question`, { state: { data: totalBalloonsHit } });
