@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import '../App.css';
 import ButtonStyle from "./ButtonStyle";
-import Game from "./game";
+import Instruction from "./instruction";
 import About from "./about";
 import Awareness from "./awarenes";
 import { LuCopyright } from "react-icons/lu";
@@ -9,18 +9,18 @@ import { MdMarkEmailUnread } from "react-icons/md";
 import { LiaHandsHelpingSolid } from "react-icons/lia";
 
 function NavPage() {
-    const [showGame, setShowGame] = useState();
+    const [showInstruction, setShowInstruction] = useState();
     const [showAbout, setShowAbout] = useState();
     const [showAwareness, setShowAwareness] = useState();
 
-    const handleGame = () => {
-        setShowGame(!showGame);
+    const handleInstruction = () => {
+        setShowInstruction(!showInstruction);
         setShowAbout(false);
         setShowAwareness(false);
     };
     const handleAbout = () => {
         setShowAbout(!showAbout);
-        setShowGame(false);
+        setShowInstruction(false);
         setShowAwareness(false);
     };
     const handleAwareness = () => {
@@ -28,7 +28,7 @@ function NavPage() {
         
     };
         return (
-             <div >{!showGame && !showAbout && !showAwareness ?(
+             <div >{!showInstruction && !showAbout && !showAwareness ?(
                 <div className="heading"> 
                     <h1 >ADHD</h1>
                      <h2>Attention Deficit Hyperactive Disorder</h2>
@@ -44,12 +44,12 @@ function NavPage() {
                     <div onClick = {handleAbout}>
                     <ButtonStyle title = 'Our Story' image = "https://images.unsplash.com/photo-1566513783365-c8b6f6862a01?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
                     </div>
-                    <div onClick = {handleGame}>
+                    <div onClick = {handleInstruction}>
                     <ButtonStyle title = 'Game Test' image ="https://images.unsplash.com/photo-1580327344181-c1163234e5a0?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                    </div>
                     </div>
                 </div>  ): null}
-                {showGame && <Game />}
+                {showInstruction && <Instruction />}
                 {showAbout && <About />}
                 {showAwareness && <Awareness />}
                 <footer className="footer">

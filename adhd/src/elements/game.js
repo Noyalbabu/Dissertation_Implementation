@@ -27,7 +27,7 @@ function Game() {
         //stop sound 
         document.querySelector('a-sound').components.sound.stopSound();
         
-        alert(`Game Over! You hit ${totalBalloonsHit} balloons`);
+       // alert(`Game Over! You hit ${totalBalloonsHit} balloons`);
         //destroy the game scene
         setVisibleBird(false);    
         document.getElementById('game1Scene').remove();

@@ -16,7 +16,7 @@ function Awareness() {
       setBgImageindex(prevIndex =>
         prevIndex ===  bgImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change background image every 1 second
+    }, 5000); // Change background image every 5  s second
 
     // Clear the interval when the component unmounts or when the background image URLs change
     return () => clearInterval(interval);
