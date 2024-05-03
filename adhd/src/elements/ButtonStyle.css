@@ -1,0 +1,139 @@
+
+.box {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin : 15vh 2vh 2vb 2vh;
+    width : 50vh;
+    height : 50vh;
+    background-color: #e7e7f04c;
+    border-radius : 85px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    transition : 1s box-shadow;
+    cursor :pointer; 
+    flex-direction: column;
+    overflow: hidden; /* Ensures the image stays within the box */
+}
+
+.box:hover{
+    box-shadow: 0 5px 35px 0px #E7EBC5;
+}
+
+.box img {
+    width: 50vh;
+    height:50vh;
+    opacity: 0.9; /* Adjust the transparency level */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.box h2 {
+    color: black;
+    font-family: 'Dancing Script';
+}
+.box:hover::before, .box:hover::after{
+   display: block;
+   content : '';
+   position: absolute;
+   width : 50vh;
+   height : 50vh;
+   background-color: #e7e7f04c;
+   box-shadow: 10px 10px 10px #E7EBC5;
+   border-radius: 75px;
+   z-index: -1;
+   animation: 2s clockwise infinite;
+}
+
+.box:hover::after{
+    background-color: #e7e7f04c;
+    box-shadow: 10px 10px 10px #E7EBC5;
+    animation: 2s anticlockwise infinite;   
+}
+
+/* keyframe names should match with teh animation name  */
+@keyframes clockwise {
+    0%{
+        top :-5px;
+        left :0px;
+    }
+    12%{
+        top :-2px;
+        left :2px;
+    }
+    25%{
+        top :0;
+        left :5px;
+    }
+    37%{
+        top :2px;
+        left :2px;
+    }
+    50%{
+        top :5px;
+        left :0;
+    }
+    62%{
+        top :2px;
+        left :-2px;
+    }
+    75%{
+        top :0;
+        left :-5px;
+    }
+    87%{
+        top :-2px;
+        left :-2px;
+    }
+    100%{
+        top :-5px;
+        left :0;
+    }
+}
+
+@keyframes anticlockwise {
+    0%{
+        top :-5px;
+        left :0px;
+    }
+    12%{
+        top :-2px;
+        left :2px;
+    }
+    25%{
+        top :0;
+        left :5px;
+    }
+    37%{
+        top :2px;
+        left :2px;
+    }
+    50%{
+        top :5px;
+        left :0;
+    }
+    62%{
+        top :2px;
+        left :-2px;
+    }
+    75%{
+        top :0;
+        left :-5px;
+    }
+    87%{
+        top :-2px;
+        left :-2px;
+    }
+    100%{
+        top :-5px;
+        left :0;
+    }
+}
+
+
+
+
+
