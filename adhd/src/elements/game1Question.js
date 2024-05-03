@@ -81,7 +81,7 @@ function Game1Q() {
     <div className='questionaire1'>
       <ques>Question 1
         <div id='hideQ'>
-        <p>How many ballons did you pop?</p>
+        <p>How many balloons did you pop?</p>
         <div id='submit' style={{display:'block'}}>
         <input type='text' id='ans1' name='ans1'/> 
         <button type="submit" onClick={getAnswer1}>Submit</button></div>

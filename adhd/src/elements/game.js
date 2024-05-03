@@ -69,7 +69,7 @@ function Game() {
   const generateBalloons = () => {
     const balloon = document.createElement('a-sphere');
     balloon.setAttribute('radius', '0.5');
-    balloon.setAttribute('color', 'red');
+    balloon.setAttribute('color', 'blue');
     balloon.setAttribute('id', `balloon-${sceneRef.current.children.length}`);
     balloon.setAttribute('position', `${Math.random() * 10 - 5} 1 ${-Math.random() * 10}`);
     balloon.setAttribute('static-body', true);
